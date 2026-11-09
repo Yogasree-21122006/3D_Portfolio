@@ -72,28 +72,28 @@ export const About: React.FC = () => {
         </div>
 
         {/* Main Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
           
           {/* Left: Bio & Interactive Story Tabs */}
-          <div className="lg:col-span-7 flex flex-col justify-between glass-panel p-8 rounded-3xl shadow-sm border border-white">
+          <div className="lg:col-span-7 flex flex-col justify-between glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm border border-white">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-3 h-3 rounded-full bg-purple-deep" />
-                <h3 className="text-xl sm:text-2xl font-bold font-display text-dark-text">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-purple-deep shrink-0" />
+                <h3 className="text-lg sm:text-2xl font-bold font-display text-dark-text leading-snug">
                   Passionate Engineer, Creative Problem Solver
                 </h3>
               </div>
 
-              <blockquote className="italic text-purple-deep/90 border-l-4 border-purple-light pl-4 py-1.5 my-4 text-base font-medium bg-lavender/10 rounded-r-xl">
+              <blockquote className="italic text-purple-deep/90 border-l-4 border-purple-light pl-3.5 sm:pl-4 py-1.5 my-3 sm:my-4 text-xs sm:text-base font-medium bg-lavender/10 rounded-r-xl">
                 &ldquo;I am an enthusiastic AI and Data Science student interested in developing intelligent systems and practical software applications. I enjoy exploring technologies, learning new frameworks, collaborating on projects and transforming innovative ideas into working solutions.&rdquo;
               </blockquote>
 
-              <p className="text-dark-muted text-sm sm:text-base leading-relaxed mb-6 font-normal">
+              <p className="text-dark-muted text-xs sm:text-base leading-relaxed mb-5 sm:mb-6 font-normal">
                 {PERSONAL_INFO.aboutDetailed}
               </p>
 
               {/* Interactive Tabs */}
-              <div className="flex gap-2 border-b border-purple-light/40 pb-2 mb-5">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 border-b border-purple-light/40 pb-2 mb-4 sm:mb-5">
                 {[
                   { id: 'vision', label: 'My Vision' },
                   { id: 'philosophy', label: 'Engineering Philosophy' },
@@ -102,7 +102,7 @@ export const About: React.FC = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id as any)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                    className={`px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xl text-xs font-bold transition-all ${
                       activeTab === tab.id
                         ? 'bg-purple-deep text-white shadow-sm'
                         : 'text-dark-muted hover:text-purple-deep hover:bg-white/60'
@@ -114,7 +114,7 @@ export const About: React.FC = () => {
               </div>
 
               {/* Tab Contents */}
-              <div className="min-h-24 text-sm text-dark-muted leading-relaxed">
+              <div className="min-h-20 sm:min-h-24 text-xs sm:text-sm text-dark-muted leading-relaxed">
                 {activeTab === 'vision' && (
                   <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
                     <p>
@@ -140,36 +140,36 @@ export const About: React.FC = () => {
             </div>
 
             {/* Quick Badges Footer */}
-            <div className="pt-6 border-t border-purple-light/30 flex flex-wrap gap-2 mt-6">
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/80 border border-purple-light/50 text-purple-deep">
+            <div className="pt-4 sm:pt-6 border-t border-purple-light/30 flex flex-wrap gap-1.5 sm:gap-2 mt-5 sm:mt-6">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-white/80 border border-purple-light/50 text-purple-deep">
                 🚀 Full Stack Prototyping
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/80 border border-soft-pink text-pink-600">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-white/80 border border-soft-pink text-pink-600">
                 👁️ Computer Vision &amp; YOLOv8
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/80 border border-pastel-blue text-blue-700">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-white/80 border border-pastel-blue text-blue-700">
                 📶 WebRTC &amp; Telemetry
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/80 border border-lavender text-purple-700">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-white/80 border border-lavender text-purple-700">
                 ⚡ FastAPI &amp; Supabase
               </span>
             </div>
           </div>
 
           {/* Right: Derived Statistic Cards */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {PERSONAL_INFO.stats.map((stat, idx) => (
               <motion.div
                 key={idx}
-                className="glass-card-interactive p-6 rounded-3xl flex flex-col justify-between border border-white hover:border-purple-light transition-all group"
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="glass-card-interactive p-4 sm:p-6 rounded-2xl sm:rounded-3xl flex flex-col justify-between border border-white hover:border-purple-light transition-all group"
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
               >
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-purple-deep to-pink-500" />
                   <span className="text-[11px] font-mono font-bold text-purple-deep/70">0{idx + 1}</span>
                 </div>
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-dark-text group-hover:text-purple-deep transition-colors mb-1">
+                  <h3 className="text-xl sm:text-3xl font-extrabold font-display text-dark-text group-hover:text-purple-deep transition-colors mb-0.5 sm:mb-1">
                     {stat.value}
                   </h3>
                   <p className="text-xs sm:text-sm font-bold text-dark-text/90 mb-0.5">

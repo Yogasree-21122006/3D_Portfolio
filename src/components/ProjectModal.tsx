@@ -32,7 +32,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 lg:p-8 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           className="fixed inset-0 bg-dark-text/40 backdrop-blur-md"
@@ -44,14 +44,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Modal Window */}
         <motion.div
-          className="relative w-full max-w-4xl bg-gradient-to-b from-[#FFF8FA] to-[#FFF1F5] rounded-3xl shadow-2xl border border-white/90 overflow-hidden z-10 max-h-[90vh] flex flex-col"
+          className="relative w-full max-w-4xl bg-gradient-to-b from-[#FFF8FA] to-[#FFF1F5] rounded-2xl sm:rounded-3xl shadow-2xl border border-white/90 overflow-hidden z-10 max-h-[92vh] flex flex-col"
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-purple-light/40 bg-white/70 backdrop-blur-sm sticky top-0 z-20">
+          <div className="flex items-center justify-between px-4 py-3 sm:px-6 sm:py-4 border-b border-purple-light/40 bg-white/80 backdrop-blur-sm sticky top-0 z-20">
             <div className="flex items-center gap-2">
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-purple-light/60 text-purple-deep border border-purple-light">
                 {project.category}
@@ -66,7 +66,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
             <button
               onClick={onClose}
-              className="p-2 rounded-full bg-white/80 border border-purple-light/50 text-dark-muted hover:text-purple-deep hover:bg-white transition-all"
+              className="p-1.5 sm:p-2 rounded-full bg-white/80 border border-purple-light/50 text-dark-muted hover:text-purple-deep hover:bg-white transition-all"
               aria-label="Close project modal"
             >
               <X className="w-5 h-5" />
@@ -74,7 +74,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Modal Scrollable Body */}
-          <div className="overflow-y-auto p-6 sm:p-8 space-y-6">
+          <div className="overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
             
             {/* Project Title & Subtitle */}
             <div>
@@ -187,13 +187,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Footer Action Links */}
-          <div className="px-6 py-4 border-t border-purple-light/40 bg-white/70 flex flex-wrap items-center justify-between gap-3 sticky bottom-0">
-            <div className="flex items-center gap-3">
+          <div className="px-4 py-3 sm:px-6 sm:py-4 border-t border-purple-light/40 bg-white/90 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 sticky bottom-0">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-dark-text text-white hover:bg-black transition-colors"
+                className="flex items-center justify-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-dark-text text-white hover:bg-black transition-colors"
               >
                 <Github className="w-3.5 h-3.5" />
                 <span>View GitHub Repository</span>
@@ -204,7 +204,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   href={project.liveDemoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-purple-deep to-pink-500 hover:shadow-purple-glow transition-all"
+                  className="flex items-center justify-center gap-2 px-5 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-purple-deep to-pink-500 hover:shadow-purple-glow transition-all"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span>Launch Live Demo</span>
@@ -214,7 +214,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-full text-xs font-semibold text-dark-muted hover:text-dark-text hover:bg-white transition-colors"
+              className="px-4 py-2 rounded-full text-xs font-semibold text-dark-muted hover:text-dark-text hover:bg-white transition-colors text-center"
             >
               Close
             </button>

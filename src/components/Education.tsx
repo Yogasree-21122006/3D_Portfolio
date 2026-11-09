@@ -31,22 +31,22 @@ export const Education: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="glass-panel p-6 sm:p-10 rounded-3xl border border-white/90 shadow-glass relative overflow-hidden"
+              className="glass-panel p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/90 shadow-glass relative overflow-hidden"
             >
               {/* Top Banner */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-purple-light/30 mb-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-deep to-pink-500 flex items-center justify-center text-white shadow-md shrink-0">
-                    <GraduationCap className="w-7 h-7" />
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 sm:pb-6 border-b border-purple-light/30 mb-5 sm:mb-6">
+                <div className="flex items-center gap-3.5 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-purple-deep to-pink-500 flex items-center justify-center text-white shadow-md shrink-0">
+                    <GraduationCap className="w-6 h-6 sm:w-7 sm:h-7" />
                   </div>
                   <div>
-                    <span className="px-3 py-0.5 rounded-full text-[10px] font-bold bg-purple-light/50 text-purple-deep uppercase tracking-wider inline-block mb-1">
+                    <span className="px-2.5 sm:px-3 py-0.5 rounded-full text-[10px] font-bold bg-purple-light/50 text-purple-deep uppercase tracking-wider inline-block mb-1">
                       {edu.badge}
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-dark-text">
+                    <h3 className="text-xl sm:text-3xl font-extrabold font-display text-dark-text">
                       {edu.institution}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-purple-deep mt-0.5">
+                    <p className="text-xs sm:text-base font-bold text-purple-deep mt-0.5">
                       {edu.degree}
                     </p>
                   </div>

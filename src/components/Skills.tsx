@@ -99,14 +99,14 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-12">
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all ${
+                className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-sm font-bold transition-all ${
                   isSelected
                     ? 'bg-purple-deep text-white shadow-purple-glow scale-105'
                     : 'glass-panel text-dark-text/80 hover:text-purple-deep hover:bg-white'
@@ -121,7 +121,7 @@ export const Skills: React.FC = () => {
         {/* Skills Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4"
         >
           <AnimatePresence>
             {filteredSkills.map((skill: SkillItem) => {

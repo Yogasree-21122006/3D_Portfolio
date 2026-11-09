@@ -29,31 +29,31 @@ export const Experience: React.FC = () => {
           {EXPERIENCE_DATA.map((exp) => (
             <div
               key={exp.id}
-              className="glass-panel p-6 sm:p-10 rounded-3xl border border-white/90 shadow-glass relative overflow-hidden"
+              className="glass-panel p-4 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-white/90 shadow-glass relative overflow-hidden"
             >
               {/* Top Meta Bar */}
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-purple-light/30 mb-6">
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-purple-light/30 mb-4 sm:mb-6">
                 <div>
-                  <div className="flex flex-wrap items-center gap-2.5 mb-2">
-                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-purple-deep text-white shadow-xs">
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-purple-deep text-white shadow-xs">
                       {exp.type}
                     </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/80 border border-purple-light/50 text-purple-deep">
+                    <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-white/80 border border-purple-light/50 text-purple-deep">
                       {exp.organization}
                     </span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold font-display text-dark-text">
+                  <h3 className="text-xl sm:text-3xl font-extrabold font-display text-dark-text">
                     {exp.role}
                   </h3>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm font-semibold text-dark-muted">
-                  <div className="flex items-center gap-1.5 bg-white/70 px-3 py-1.5 rounded-xl border border-purple-light/30">
-                    <Calendar className="w-4 h-4 text-purple-deep" />
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm font-semibold text-dark-muted">
+                  <div className="flex items-center gap-1.5 bg-white/70 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-purple-light/30">
+                    <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-purple-deep" />
                     <span>{exp.duration}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 bg-white/70 px-3 py-1.5 rounded-xl border border-purple-light/30">
-                    <MapPin className="w-4 h-4 text-pink-600" />
+                  <div className="flex items-center gap-1.5 bg-white/70 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-purple-light/30">
+                    <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-600" />
                     <span>{exp.location}</span>
                   </div>
                 </div>

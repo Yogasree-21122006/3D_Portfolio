@@ -70,62 +70,62 @@ TECHNICAL SKILLS:
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 lg:p-8 bg-dark-text/60 backdrop-blur-md overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 lg:p-8 bg-dark-text/60 backdrop-blur-md overflow-y-auto">
         <motion.div
-          className="relative max-w-4xl w-full bg-white rounded-3xl shadow-2xl border border-white overflow-hidden max-h-[92vh] flex flex-col z-10"
+          className="relative max-w-4xl w-full bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-white overflow-hidden max-h-[92vh] flex flex-col z-10"
           initial={{ scale: 0.94, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.94, opacity: 0, y: 20 }}
         >
           {/* Top Bar with Print & Actions */}
-          <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-50 via-pink-50 to-white border-b border-purple-light/40 sticky top-0 z-20">
+          <div className="flex flex-wrap items-center justify-between gap-2 px-4 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-purple-50 via-pink-50 to-white border-b border-purple-light/40 sticky top-0 z-20">
             <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-purple-deep" />
-              <span className="font-display font-bold text-sm text-dark-text">
-                Yoga Sree S &mdash; Official Resume
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-purple-deep" />
+              <span className="font-display font-bold text-xs sm:text-sm text-dark-text">
+                Yoga Sree S &mdash; Resume
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <button
                 onClick={handleCopyText}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-purple-light/50 text-dark-text hover:bg-purple-50 transition-all shadow-xs"
+                className="flex items-center gap-1 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-white border border-purple-light/50 text-dark-text hover:bg-purple-50 transition-all shadow-xs"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-purple-deep" />}
-                <span>{copied ? 'Copied!' : 'Copy Text'}</span>
+                {copied ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-purple-deep" />}
+                <span>{copied ? 'Copied' : 'Copy'}</span>
               </button>
 
               <button
                 onClick={handlePrint}
-                className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold text-white bg-purple-deep hover:bg-purple-vibrant transition-all shadow-sm"
+                className="flex items-center gap-1 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold text-white bg-purple-deep hover:bg-purple-vibrant transition-all shadow-sm"
               >
-                <Printer className="w-3.5 h-3.5" />
-                <span>Print / Save PDF</span>
+                <Printer className="w-3 h-3" />
+                <span>PDF / Print</span>
               </button>
 
               <button
                 onClick={onClose}
-                className="p-1.5 rounded-full text-dark-muted hover:text-dark-text hover:bg-white transition-all ml-1"
+                className="p-1 rounded-full text-dark-muted hover:text-dark-text hover:bg-white transition-all ml-0.5"
                 aria-label="Close resume"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>
 
           {/* Printable Resume Canvas */}
-          <div className="overflow-y-auto p-6 sm:p-10 space-y-6 text-dark-text select-text print:p-0">
+          <div className="overflow-y-auto p-4 sm:p-6 sm:p-10 space-y-4 sm:space-y-6 text-dark-text select-text print:p-0">
             
             {/* Header */}
-            <div className="text-center pb-6 border-b border-purple-light/40">
-              <h1 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-dark-text mb-1">
+            <div className="text-center pb-4 sm:pb-6 border-b border-purple-light/40">
+              <h1 className="text-2xl sm:text-4xl font-extrabold font-display tracking-tight text-dark-text mb-1">
                 {RESUME_DATA.name}
               </h1>
-              <p className="text-sm sm:text-base font-semibold text-purple-deep mb-3">
+              <p className="text-xs sm:text-base font-semibold text-purple-deep mb-2 sm:mb-3">
                 {RESUME_DATA.title}
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-dark-muted font-medium">
-                <span>{RESUME_DATA.contact.email}</span>
+              <div className="flex flex-wrap items-center justify-center gap-x-2.5 sm:gap-x-4 gap-y-1 text-[11px] sm:text-xs text-dark-muted font-medium">
+                <span className="break-all">{RESUME_DATA.contact.email}</span>
                 <span>&bull;</span>
                 <span>{RESUME_DATA.contact.location}</span>
                 <span>&bull;</span>

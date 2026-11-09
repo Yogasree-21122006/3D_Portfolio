@@ -80,19 +80,19 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Quick Contact Card */}
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white shadow-sm">
-              <h3 className="text-xl font-bold font-display text-dark-text mb-2">
+            <div className="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white shadow-sm">
+              <h3 className="text-lg sm:text-xl font-bold font-display text-dark-text mb-1.5 sm:mb-2">
                 Connect Directly
               </h3>
-              <p className="text-xs sm:text-sm text-dark-muted leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-dark-muted leading-relaxed mb-5 sm:mb-6">
                 Feel free to email me, review my GitHub repositories, or connect on LinkedIn. I reply promptly to recruiters and peers.
               </p>
 
               {/* Email Pill with Copy Button */}
-              <div className="p-4 rounded-2xl bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-light/50 flex items-center justify-between gap-3 mb-4">
-                <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="w-10 h-10 rounded-xl bg-purple-deep text-white flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5" />
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-light/50 flex items-center justify-between gap-2.5 sm:gap-3 mb-4">
+                <div className="flex items-center gap-2.5 sm:gap-3 overflow-hidden">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-deep text-white flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div className="overflow-hidden">
                     <span className="text-[10px] font-bold text-dark-faint uppercase block">Direct Email</span>
@@ -104,7 +104,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
 
                 <button
                   onClick={handleCopyEmail}
-                  className="px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-purple-light text-purple-deep hover:bg-purple-deep hover:text-white transition-all shrink-0 flex items-center gap-1 shadow-xs"
+                  className="px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-bold bg-white border border-purple-light text-purple-deep hover:bg-purple-deep hover:text-white transition-all shrink-0 flex items-center gap-1 shadow-xs"
                   title="Copy email to clipboard"
                 >
                   {emailCopied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
@@ -168,8 +168,8 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume }) => {
 
           {/* Right: Interactive Contact Form */}
           <div className="lg:col-span-7">
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white shadow-glass">
-              <h3 className="text-xl font-bold font-display text-dark-text mb-1">
+            <div className="glass-panel p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-white shadow-glass">
+              <h3 className="text-lg sm:text-xl font-bold font-display text-dark-text mb-1">
                 Send a Message
               </h3>
               <p className="text-xs sm:text-sm text-dark-muted mb-6">

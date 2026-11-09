@@ -62,8 +62,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onReplayIntro, onOpenResume }) =
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className={`flex items-center justify-between px-5 py-3 rounded-full transition-all duration-300 ${
+      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
+        <nav className={`flex items-center justify-between px-3 sm:px-5 py-2 sm:py-3 rounded-full transition-all duration-300 ${
           isScrolled
             ? 'bg-white/80 backdrop-blur-md border border-white/90 shadow-glass'
             : 'bg-white/40 backdrop-blur-sm border border-white/60'

@@ -77,57 +77,57 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         >
           {/* Status Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-purple-light/60 shadow-sm mb-6"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-purple-light/60 shadow-sm mb-5 sm:mb-6 max-w-full"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="relative flex h-2.5 w-2.5">
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-deep opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-purple-deep"></span>
             </span>
-            <span className="text-xs font-bold text-dark-text tracking-wide">
+            <span className="text-[11px] sm:text-xs font-bold text-dark-text tracking-wide truncate">
               Kongu Engineering College &bull; 3rd Year B.Tech AIDS
             </span>
           </motion.div>
 
           {/* Hello Greeting */}
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-sm sm:text-base font-bold uppercase tracking-wider text-purple-deep font-mono">
+          <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
+            <span className="text-xs sm:text-base font-bold uppercase tracking-wider text-purple-deep font-mono">
               Hello, I&apos;m
             </span>
-            <Sparkles className="w-4 h-4 text-pink-500 animate-spin-slow" />
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pink-500 animate-spin-slow" />
           </div>
 
           {/* Main Name Heading */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-dark-text tracking-tight font-display mb-4 leading-none">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-dark-text tracking-tight font-display mb-3 sm:mb-4 leading-tight">
             YOGA SREE S
           </h1>
 
           {/* Animated Role Cycler */}
-          <div className="h-10 sm:h-12 mb-6 flex items-center">
+          <div className="h-9 sm:h-12 mb-4 sm:mb-6 flex items-center">
             <motion.div
               key={roleIndex}
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-deep via-purple-vibrant to-pink-500 bg-clip-text text-transparent"
+              className="text-lg sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-deep via-purple-vibrant to-pink-500 bg-clip-text text-transparent"
             >
               {ROLES[roleIndex]}
             </motion.div>
           </div>
 
           {/* Biography Paragraph */}
-          <p className="text-dark-muted text-base sm:text-lg leading-relaxed max-w-2xl mb-8 font-normal">
+          <p className="text-dark-muted text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mb-6 sm:mb-8 font-normal">
             {PERSONAL_INFO.bioShort}
           </p>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto mb-8">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-6 sm:mb-8">
             <button
               onClick={() => scrollTo('projects')}
-              className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-purple-deep via-purple-vibrant to-pink-500 hover:shadow-purple-glow hover:scale-105 active:scale-95 transition-all shadow-md group"
+              className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-purple-deep via-purple-vibrant to-pink-500 hover:shadow-purple-glow hover:scale-105 active:scale-95 transition-all shadow-md group"
             >
               <span>Explore My Work</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -135,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
             <button
               onClick={onOpenResume}
-              className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-purple-deep bg-white/90 border border-purple-light/70 hover:bg-lavender/40 hover:border-purple-deep/40 shadow-sm transition-all group"
+              className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-sm text-purple-deep bg-white/90 border border-purple-light/70 hover:bg-lavender/40 hover:border-purple-deep/40 shadow-sm transition-all group"
             >
               <FileText className="w-4 h-4 text-purple-vibrant group-hover:scale-110 transition-transform" />
               <span>Download Resume</span>
@@ -143,7 +143,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
             <button
               onClick={() => scrollTo('contact')}
-              className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-3.5 rounded-full font-bold text-sm text-dark-text/80 bg-white/60 border border-white/80 hover:bg-white hover:text-purple-deep shadow-sm transition-all"
+              className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-full font-bold text-sm text-dark-text/80 bg-white/60 border border-white/80 hover:bg-white hover:text-purple-deep shadow-sm transition-all"
             >
               <Send className="w-4 h-4" />
               <span>Contact Me</span>
@@ -151,7 +151,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           </div>
 
           {/* Quick Verified Social Links */}
-          <div className="flex items-center gap-4 pt-2 border-t border-purple-light/30 w-full max-w-md">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 pt-2 border-t border-purple-light/30 w-full max-w-md">
             <span className="text-xs font-semibold text-dark-faint uppercase tracking-wider">Connect:</span>
             <a
               href={PERSONAL_INFO.linkedin}
@@ -255,13 +255,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <span className="font-bold text-sm">⚡</span>
             </motion.div>
 
-            {/* Floating Real Achievement Badges */}
+            {/* Floating Real Achievement Badges on Tablet & Desktop */}
             {FLOATING_BADGES.map((badge, idx) => {
               const Icon = badge.icon;
               return (
                 <motion.div
                   key={idx}
-                  className={`absolute ${badge.position} z-20 flex items-center gap-2 px-3 py-2 rounded-2xl bg-gradient-to-r ${badge.color} border shadow-lg backdrop-blur-md`}
+                  className={`hidden sm:flex absolute ${badge.position} z-20 items-center gap-2 px-3 py-2 rounded-2xl bg-gradient-to-r ${badge.color} border shadow-lg backdrop-blur-md`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + idx * 0.15 }}
@@ -276,6 +276,26 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               );
             })}
           </motion.div>
+
+          {/* Mobile Badge Chips (Clean stacked layout on phone screens) */}
+          <div className="flex flex-col gap-2 mt-5 sm:hidden w-full max-w-[280px]">
+            {FLOATING_BADGES.map((badge, idx) => {
+              const Icon = badge.icon;
+              return (
+                <div
+                  key={idx}
+                  className={`flex items-center gap-2.5 px-3 py-2 rounded-2xl bg-gradient-to-r ${badge.color} border shadow-xs`}
+                >
+                  <div className="p-1 rounded-lg bg-white/90 shadow-xs shrink-0">
+                    <Icon className="w-3.5 h-3.5" />
+                  </div>
+                  <span className="text-xs font-bold tracking-tight">
+                    {badge.text}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </motion.div>
 
       </div>

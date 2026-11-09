@@ -32,17 +32,17 @@ export const Achievements: React.FC = () => {
         </div>
 
         {/* Triple Prize Spotlight Banner (AI Zoom Meeting Flagship Highlight) */}
-        <div className="mb-14 glass-card-interactive p-6 sm:p-8 rounded-3xl border-2 border-purple-light/70 shadow-purple-glow/20 relative overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-400 to-rose-400 flex items-center justify-center text-white shadow-md shrink-0">
-                <Trophy className="w-8 h-8" />
+        <div className="mb-10 sm:mb-14 glass-card-interactive p-4 sm:p-8 rounded-2xl sm:rounded-3xl border-2 border-purple-light/70 shadow-purple-glow/20 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6">
+            <div className="flex items-start sm:items-center gap-3.5 sm:gap-4">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-amber-400 to-rose-400 flex items-center justify-center text-white shadow-md shrink-0">
+                <Trophy className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
               <div>
-                <span className="px-3 py-0.5 rounded-full text-[10px] font-extrabold tracking-widest uppercase bg-amber-200 text-amber-950 inline-block mb-1">
+                <span className="px-2.5 sm:px-3 py-0.5 rounded-full text-[10px] font-extrabold tracking-widest uppercase bg-amber-200 text-amber-950 inline-block mb-1">
                   TRIPLE 1ST PRIZE WINNER
                 </span>
-                <h3 className="text-xl sm:text-2xl font-extrabold font-display text-dark-text">
+                <h3 className="text-lg sm:text-2xl font-extrabold font-display text-dark-text">
                   AI Zoom Meeting &mdash; 3x 1st Prize-Winning Project
                 </h3>
                 <p className="text-xs sm:text-sm text-dark-muted mt-1 max-w-2xl">
@@ -51,12 +51,12 @@ export const Achievements: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto">
               <a
                 href="https://ai-zoom-meeting.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-purple-deep to-pink-500 hover:shadow-purple-glow transition-all"
+                className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-gradient-to-r from-purple-deep to-pink-500 hover:shadow-purple-glow transition-all"
               >
                 <span>Live Demo</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -163,9 +163,9 @@ export const Achievements: React.FC = () => {
       {/* Fullscreen Certificate & Achievement Lightbox */}
       <AnimatePresence>
         {activeModalItem && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-dark-text/70 backdrop-blur-md overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 lg:p-8 bg-dark-text/70 backdrop-blur-md overflow-y-auto">
             <motion.div
-              className="relative max-w-4xl w-full bg-gradient-to-b from-[#FFF8FA] to-[#FFF1F5] rounded-3xl p-6 sm:p-8 shadow-2xl border border-white z-10 max-h-[92vh] overflow-y-auto"
+              className="relative max-w-4xl w-full bg-gradient-to-b from-[#FFF8FA] to-[#FFF1F5] rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl border border-white z-10 max-h-[92vh] overflow-y-auto"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -173,21 +173,21 @@ export const Achievements: React.FC = () => {
               {/* Close Button */}
               <button
                 onClick={() => setActiveModalItem(null)}
-                className="absolute top-5 right-5 p-2 rounded-full bg-white/80 border border-purple-light/50 text-dark-text hover:text-purple-deep hover:bg-white transition-all shadow-sm z-20"
+                className="absolute top-3 right-3 sm:top-5 sm:right-5 p-1.5 sm:p-2 rounded-full bg-white/80 border border-purple-light/50 text-dark-text hover:text-purple-deep hover:bg-white transition-all shadow-sm z-20"
                 aria-label="Close modal"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 items-start">
                 
                 {/* Certificate High-Res Preview */}
                 <div className="md:col-span-7 flex flex-col items-center">
-                  <div className="rounded-2xl overflow-hidden border border-purple-light/60 shadow-lg bg-white w-full max-h-[65vh] flex items-center justify-center">
+                  <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-purple-light/60 shadow-lg bg-white w-full max-h-[48vh] sm:max-h-[65vh] flex items-center justify-center">
                     <img
                       src={activeModalItem.image}
                       alt={activeModalItem.title}
-                      className="max-h-[65vh] w-full object-contain"
+                      className="max-h-[48vh] sm:max-h-[65vh] w-full object-contain"
                     />
                   </div>
 
