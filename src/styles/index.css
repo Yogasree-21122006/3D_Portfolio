@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #FFF1F5;
+    color: #29243A;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #FFF1F5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E9D5FF;
+    border-radius: 9999px;
+    border: 2px solid #FFF1F5;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C4B5FD;
+  }
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 30px -10px rgba(196, 181, 253, 0.28);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(196, 181, 253, 0.6);
+  box-shadow: 0 20px 40px -12px rgba(124, 58, 237, 0.18);
+  transform: translateY(-4px);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-card-interactive {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 241, 245, 0.65) 100%);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 36px -12px rgba(233, 213, 255, 0.5);
+}
+
+/* Background gradient blobs */
+.bg-mesh-pattern {
+  background-image: 
+    radial-gradient(at 10% 15%, rgba(251, 207, 232, 0.45) 0px, transparent 55%),
+    radial-gradient(at 90% 10%, rgba(233, 213, 255, 0.45) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(191, 219, 254, 0.3) 0px, transparent 60%),
+    radial-gradient(at 80% 85%, rgba(251, 207, 232, 0.4) 0px, transparent 50%),
+    radial-gradient(at 20% 90%, rgba(196, 181, 253, 0.35) 0px, transparent 55%);
+}
+
+/* Character Running Animation Keyframes for Intro */
+@keyframes runBounce {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-1.5deg);
+  }
+}
+
+@keyframes legLeft {
+  0% { transform: rotate(35deg); }
+  50% { transform: rotate(-35deg); }
+  100% { transform: rotate(35deg); }
+}
+
+@keyframes legRight {
+  0% { transform: rotate(-35deg); }
+  50% { transform: rotate(35deg); }
+  100% { transform: rotate(-35deg); }
+}
+
+@keyframes armLeft {
+  0% { transform: rotate(-30deg); }
+  50% { transform: rotate(30deg); }
+  100% { transform: rotate(-30deg); }
+}
+
+@keyframes armRight {
+  0% { transform: rotate(30deg); }
+  50% { transform: rotate(-30deg); }
+  100% { transform: rotate(30deg); }
+}
+
+@keyframes hairSway {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(12deg); }
+}
+
+@keyframes shadowPulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.25; }
+  50% { transform: scaleX(0.75); opacity: 0.15; }
+}
+
+@keyframes moveLine {
+  0% { transform: translate3d(0, 0, 0) scaleX(0.4); opacity: 0.1; }
+  50% { opacity: 0.6; }
+  100% { transform: translate3d(0, 45px, 0) scaleX(1); opacity: 0; }
+}
+
+@keyframes warpScale {
+  0% { transform: scale(0.4); opacity: 0.85; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
+
+.anim-run-bounce {
+  animation: runBounce 0.45s ease-in-out infinite;
+}
+
+.anim-leg-left {
+  transform-origin: 50% 10%;
+  animation: legLeft 0.45s ease-in-out infinite;
+}
+
+.anim-leg-right {
+  transform-origin: 50% 10%;
+  animation: legRight 0.45s ease-in-out infinite;
+}
+
+.anim-arm-left {
+  transform-origin: 50% 10%;
+  animation: armLeft 0.45s ease-in-out infinite;
+}
+
+.anim-arm-right {
+  transform-origin: 50% 10%;
+  animation: armRight 0.45s ease-in-out infinite;
+}
+
+.anim-hair-sway {
+  transform-origin: 20% 20%;
+  animation: hairSway 0.45s ease-in-out infinite;
+}
+
+.anim-shadow-pulse {
+  animation: shadowPulse 0.45s ease-in-out infinite;
+}
+
+/* High-Speed Sprint Animation Keyframes */
+@keyframes sprintBounce {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(16deg);
+  }
+  50% {
+    transform: translate3d(3px, -14px, 0) rotate(18deg);
+  }
+}
+
+@keyframes sprintLegFront {
+  0% { transform: rotate(58deg); }
+  50% { transform: rotate(-62deg); }
+  100% { transform: rotate(58deg); }
+}
+
+@keyframes sprintLegBack {
+  0% { transform: rotate(-62deg); }
+  50% { transform: rotate(58deg); }
+  100% { transform: rotate(-62deg); }
+}
+
+@keyframes sprintArmFront {
+  0% { transform: rotate(-55deg); }
+  50% { transform: rotate(55deg); }
+  100% { transform: rotate(-55deg); }
+}
+
+@keyframes sprintArmBack {
+  0% { transform: rotate(55deg); }
+  50% { transform: rotate(-55deg); }
+  100% { transform: rotate(55deg); }
+}
+
+@keyframes sprintHairStream {
+  0%, 100% {
+    transform: rotate(3deg) scaleY(0.92);
+  }
+  50% {
+    transform: rotate(-5deg) scaleY(1.08);
+  }
+}
+
+@keyframes sprintWindFast {
+  0% {
+    transform: translate3d(140%, 0, 0) scaleX(2);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(-160%, 0, 0) scaleX(0.7);
+    opacity: 0;
+  }
+}
+
+.anim-sprint-bounce {
+  animation: sprintBounce 0.24s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.anim-sprint-leg-front {
+  transform-origin: 50% 10%;
+  animation: sprintLegFront 0.24s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.anim-sprint-leg-back {
+  transform-origin: 50% 10%;
+  animation: sprintLegBack 0.24s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.anim-sprint-arm-front {
+  transform-origin: 50% 15%;
+  animation: sprintArmFront 0.24s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.anim-sprint-arm-back {
+  transform-origin: 50% 15%;
+  animation: sprintArmBack 0.24s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.anim-sprint-hair {
+  transform-origin: 15% 50%;
+  animation: sprintHairStream 0.14s ease-in-out infinite;
+}
+
+.anim-wind-fast {
+  animation: sprintWindFast 0.35s linear infinite;
+}
+
+/* Perspective utilities for 3D card tilt */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
